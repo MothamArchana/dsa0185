@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+void mergeArrays(int arr1[], int size1, int arr2[], int size2, int mergedArray[]) {
+    // Index for the mergedArray
+    int i = 0;
+    // Copy elements of the first array
+    for (int j = 0; j < size1; ++j) {
+        mergedArray[i++] = arr1[j];
+    }
+    // Copy elements of the second array
+    for (int j = 0; j < size2; ++j) {
+        mergedArray[i++] = arr2[j];
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    // Define two arrays to be merged
+    int arr1[] = {1, 3, 5, 7};
+    int arr2[] = {2, 4, 6, 8};
+    
+    int size1 = sizeof(arr1) / sizeof(arr1[0]);
+    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    
+    // Create a merged array with combined size
+    int mergedSize = size1 + size2;
+    int mergedArray[mergedSize];
+    
+    // Merge the arrays
+    mergeArrays(arr1, size1, arr2, size2, mergedArray);
+    
+    // Print the merged array
+    cout << "Merged array: ";
+    printArray(mergedArray, mergedSize);
+    
+    return 0;
+}
