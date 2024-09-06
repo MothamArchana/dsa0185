@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm> // For std::reverse
+#include <string>
+
+using namespace std;
+
+class calrev {
+protected:
+    string str; // String to be reversed
+
+public:
+    // Method to find and print the reversed string
+    void findrev() {
+        cout << "Enter str: ";
+        cin >> str; // Input string
+        
+        // Reverse the string using std::reverse
+        string reversed_str = str; // Create a copy to reverse
+        reverse(reversed_str.begin(), reversed_str.end());
+        
+        cout << "The reverse is: " << reversed_str << endl;
+    }
+};
+
+int main() {
+    calrev r1; // Create an instance of calrev
+    r1.findrev(); // Call the findrev method
+    return 0;
+}
